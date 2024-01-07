@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes, useActionData } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { LayoutHome } from "./LayoutHome";
 import HomePage from "pages/HomePage/HomePage";
 import RatesPage from "pages/RatesPage/RatesPage";
@@ -16,7 +16,7 @@ export const App = () => {
     
     function success(pos) {
       const crd = pos.coords;
-      getCurrentPosition(pos.coords)
+      getCurrentPosition(crd)
       
       // console.log("Your current position is:");
       // console.log(`Latitude : ${crd.latitude}`);
