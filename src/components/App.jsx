@@ -4,8 +4,11 @@ import HomePage from "pages/HomePage/HomePage";
 import RatesPage from "pages/RatesPage/RatesPage";
 import { useEffect } from "react";
 import { getCurrentPosition } from "service/getCurrentPosition";
+import { useDispatch } from "react-redux";
+import { fetchBaseCurrency } from "redux/operations";
 
 export const App = () => {
+  const dispatch = useDispatch();
 
   useEffect(()=> {
     const options = {
@@ -15,8 +18,9 @@ export const App = () => {
     };
     
     function success(pos) {
-      const crd = pos.coords;
-      getCurrentPosition(crd)
+      //const crd = pos.coords;
+      //getCurrentPosition(crd)
+      dispatch(fetchBaseCurrency(pos.coords));
       
       // console.log("Your current position is:");
       // console.log(`Latitude : ${crd.latitude}`);

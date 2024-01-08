@@ -8,6 +8,6 @@ export const getCurrentPosition = async ({ latitude, longitude }) => {
   const urlPosition = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}&language=en`;
 
   const { data } = await axios.get(urlPosition);
-  console.log(data);
+  console.log('getCurrentPosition :',data);
   return data;
 };
