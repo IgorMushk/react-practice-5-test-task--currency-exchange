@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchChangeCurrency } from 'redux/operations';
-import { exchangeCurrency } from 'service/chendeCurrency';
+//import { exchangeCurrency } from 'service/chendeCurrency';
 
 export const Form = () => {
   const dispatch = useDispatch()
