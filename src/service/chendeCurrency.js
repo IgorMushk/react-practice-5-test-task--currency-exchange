@@ -8,11 +8,20 @@ const requestOptions = {
 };
 
 export const exchangeCurrency = ({to, from, amount}) => {
-    fetch(
+    return fetch(
         `https://api.apilayer.com/exchangerates_data/convert?to=${to}&from=${from}&amount=${amount}`,
         requestOptions,
     )
     .then(response => response.json())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+    // .then(result => console.log(result))
+    // .catch(error => console.log('error', error));
 }
+
+
+// - ADD -
+// fetch('https://api.apilayer.com/exchangerates_data/symbols', requestOptions);
+// 'https://api.apilayer.com/exchangerates_data/convert?to=USD&from=UAH&amount=15';
+// fetch(
+// 'https://api.apilayer.com/exchangerates_data/latest?symbols=usd,jpy&base=uah',
+// requestOptions,
+// );

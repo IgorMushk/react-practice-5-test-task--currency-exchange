@@ -1,7 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchChangeCurrency } from 'redux/operations';
 import { exchangeCurrency } from 'service/chendeCurrency';
 
 export const Form = () => {
+  const dispatch = useDispatch()
   const handleSubmit = (e) => {
     e.preventDefault();
     const {value} = e.target.elements.currency;
@@ -9,7 +12,8 @@ export const Form = () => {
     //console.log(value.split(' ')); 
     const [amount, from, ,to] =value.split(' ');
     //console.log({amount, from, to});
-    exchangeCurrency({amount, from, to})
+    //--exchangeCurrency({amount, from, to})
+    dispatch(fetchChangeCurrency({amount, from, to}));
   } 
   return (
     // <div>Form</div>

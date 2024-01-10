@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit/dist";
+import { exchangeCurrency } from "service/chendeCurrency";
 import { getCurrentPosition } from "service/getCurrentPosition";
 
 export const fetchBaseCurrency = createAsyncThunk(
@@ -14,5 +15,16 @@ export const fetchBaseCurrency = createAsyncThunk(
        return data.results[0].annotations.currency.iso_code;
       } catch (error) {
           return thunkApi.rejectWithValue(error.message);
+      }
+    })
+
+export const fetchChangeCurrency = createAsyncThunk(
+    'currency/exchangeCurrency', 
+    async (cradantials, thunkApi) =>{
+      try {
+        const data = await exchangeCurrency(cradantials);
+        return data;
+      } catch (error) {
+        
       }
     })
