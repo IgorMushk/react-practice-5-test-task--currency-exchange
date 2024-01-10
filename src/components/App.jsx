@@ -6,6 +6,7 @@ import { useEffect } from "react";
 //import { getCurrentPosition } from "service/getCurrentPosition";
 import { useDispatch } from "react-redux";
 import { fetchBaseCurrency } from "redux/operations";
+import { setBaseCurrency } from "redux/currencySlice";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -29,13 +30,14 @@ export const App = () => {
     }
     
     function error(err) {
+      dispatch(setBaseCurrency('USD'));
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
     
     navigator.geolocation.getCurrentPosition(success, error, options);
     
   //}, [])
-})
+}, [dispatch])
 
   return (
     <Routes>
