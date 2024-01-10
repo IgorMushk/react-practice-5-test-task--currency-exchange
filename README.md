@@ -35,7 +35,7 @@ Exchanges Rates API https://exchangeratesapi.io/documentation/
 Fixer API (similar to previous) https://fixer.io/documentation  
 Open exchange rates https://openexchangerates.org/  
 
-#==================================================
+### ==================================================
 
 # React homework template
 
