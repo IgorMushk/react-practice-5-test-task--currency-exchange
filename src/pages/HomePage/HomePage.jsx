@@ -1,8 +1,11 @@
+//import Form from 'components/Form/Form'
+import {Form} from '../../components/Form/Form'
 import React from 'react'
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    // <div>HomePage</div>
+    <Form/>
   )
 }
 
